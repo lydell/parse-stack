@@ -1,7 +1,7 @@
 Overview
 ========
 
-Cross-browser parsing of the [`stack`] property of error objects.
+Cross-browser parsing of the [`stack` property][stack] of error objects.
 
 What it does: Parse the `stack` property into name, file path, line number and column number (if
 available). Cross-browser.
