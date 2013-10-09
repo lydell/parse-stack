@@ -1,0 +1,27 @@
+{
+  "name": "parse-stack",
+  "version": "0.1.0",
+  "author": "Simon Lydell",
+  "license": "LGPLv3",
+  "description": "Parses the stack property of errors. Cross-browser.",
+  "main": "lib/parse-stack",
+  "repository": "lydell/parse-stack",
+  "homepage": "https://github.com/lydell/parse-stack",
+  "bugs": "https://github.com/lydell/parse-stack/issues",
+  "keywords": [
+    "parse",
+    "stack",
+    "trace",
+    "error"
+  ],
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script",
+    "prepublish": "rm -rf lib && coffee --bare --output lib/ src/"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "coffee-script": "~1.6.3",
+    "throws": "~0.1.0",
+    "equals": "~0.3.2"
+  }
+}
