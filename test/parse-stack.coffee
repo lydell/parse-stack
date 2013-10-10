@@ -15,11 +15,10 @@ You should have received a copy of the GNU Lesser General Public License along w
 not, see <http://www.gnu.org/licenses/>.
 ###
 
-assert = require "assert"
-throws = require "throws"
-equal  = require "equals"
+{assert, throws, equal} = require "./common"
 
 parseStack = require "../src/parse-stack"
+
 
 toString = -> if @message then "#{@name}: #{@message}" else @name
 

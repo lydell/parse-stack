@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lydell/parse-stack.png?branch=master)](https://travis-ci.org/lydell/parse-stack)
+
 Overview
 ========
 
@@ -45,6 +47,19 @@ Installation
 ============
 
 `npm install parse-stack`
+`component install lydell/parse-stack`
+
+CommonJS: `var parseStack = require("parse-stack")`
+
+AMD and regular old browser globals: Use ./parse-stack.js
+
+
+Tests
+=====
+
+Node.js: `npm test`
+
+Browser: Open ./test/browser/index.html
 
 
 License

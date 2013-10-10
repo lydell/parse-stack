@@ -1,0 +1,17 @@
+{
+  "name": "parse-stack",
+  "version": "0.1.1",
+  "license": "LGPLv3",
+  "description": "Parses the stack property of errors. Cross-browser.",
+  "main": "lib/parse-stack.js",
+  "repo": "lydell/parse-stack",
+  "keywords": [
+    "parse",
+    "stack",
+    "trace",
+    "error"
+  ],
+  "scripts": [
+    "lib/parse-stack.js"
+  ]
+}
