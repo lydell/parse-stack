@@ -2,7 +2,7 @@ Description
 ===========
 
 The following test was run in a number of different browsers, and a screen shot was taken of its
-result: <http://jsbin.com/uzogir>. It tries to write the [`stack`] property of an error. If
+result: <http://jsbin.com/uzogir>. It tries to write the [`stack` property][stack] of an error. If
 "undefined" is written the test failed. If a stack trace is written the test passed. The screen
 shots also serve to view the differences in formatting of the stack trace.
 
@@ -45,8 +45,8 @@ Support
 
 - Firefox – @ format (with a [limitation](#limitation) in version 13-)
 - Chrome – at format
-- Opera 12- — @ format (with a [limitation](#limitation))
-- Opera 15+ — at format
+- Opera 12- – @ format (with a [limitation](#limitation))
+- Opera 15+ – at format
 - Safari 6+ – @ format
 - Internet Explorer 10+ – at format
 
