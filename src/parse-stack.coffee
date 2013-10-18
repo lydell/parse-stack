@@ -77,10 +77,4 @@ parseStack = (error)->
 
 ensureType = (type, value)-> if value then type(value) else undefined
 
-switch
-	when typeof define is "function" and define.amd
-		define(parseStack)
-	when typeof module is "object"
-		module.exports = parseStack
-	else
-		@parseStack = parseStack
+module.exports = parseStack
