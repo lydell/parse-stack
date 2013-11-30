@@ -46,8 +46,7 @@ if (stack === null) {
 Installation
 ============
 
-`npm install parse-stack`
-`component install lydell/parse-stack`
+`npm install parse-stack` or `component install lydell/parse-stack`
 
 CommonJS: `var parseStack = require("parse-stack")`
 

@@ -1,6 +1,6 @@
 {
   "name": "parse-stack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Simon Lydell",
   "license": "LGPLv3",
   "description": "Parses the stack property of errors. Cross-browser.",
