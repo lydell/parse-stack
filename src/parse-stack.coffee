@@ -18,21 +18,26 @@ not, see <http://www.gnu.org/licenses/>.
 # - `\x20` matches a space.
 # - See also support/support.md
 formats = [
+	
+
 	# The at format.
 	///
-		^\x20+at\x20
+		^(?=
+			.*\bat\x20:
+			|
+			(?!.*\x20:\d+:\d+$))
+		\x20+at\x20
 		(?:
 			([^(]+)
 			\x20\(
 		)?
-		(.*?) 		# filepath
+		(.*?) # filepath
 		(?:
 			:
-			(\d+) 	# lineNumber
+			(\d+) # lineNumber
 			:
-			(\d+) 	# columnNumber
+			(\d+) # columnNumber
 		)?
-
 		\)?$
 		///
 
