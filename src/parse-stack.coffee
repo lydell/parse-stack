@@ -20,21 +20,17 @@ not, see <http://www.gnu.org/licenses/>.
 formats = [
 	# The at format.
 	///
-		^(?=
-			.*\bat\x20:
-			|
-			(?!.*\x20:\d+:\d+$))
-		\x20+at\x20
+		^\x20+at\x20
 		(?:
-			([^(]+)
+			([^(]+) # name
 			\x20\(
 		)?
-		(.*?) # filepath
+		(.*?)       # filepath
 		(?:
 			:
-			(\d+) # lineNumber
+			(\d+)   # lineNumber
 			:
-			(\d+) # columnNumber
+			(\d+)   # columnNumber
 		)?
 		\)?$
 		///
