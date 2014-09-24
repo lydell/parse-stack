@@ -1,0 +1,26 @@
+﻿pick 800e0c0 Fix small errors in readme
+squash fdc4f9c Updated `at` regex - support new lines
+squash 7238f48 Updated `at` regex - in coffee source
+squash f2f962a Fixed `at` regex to pass all Unit tests
+squash fe03ab9 Reverted mocha opts for travis builds
+squash c95c409 Fixed typos, newlines
+squash 8063944 simplify
+
+# Rebase 3525ab2..f3f57a0 onto 3525ab2
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+
