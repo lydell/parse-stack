@@ -87,10 +87,7 @@ describe "the at format", ->
 		assert columnNumber is 1
 
 
-	it "may also contain a function name, if parenthesis surround", ->
-		assert throws Error("    at functionName :0:1"),
-			-> parseStack({stack: "    at functionName :0:1"})
-
+	it "may also contain a function name", ->
 		stack = parseStack({stack: "    at functionName (:0:1)"})
 		assert stack.length is 1
 		{name, filepath, lineNumber, columnNumber} = stack[0]
