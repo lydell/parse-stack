@@ -120,7 +120,7 @@ describe "the at format", ->
 		assert lineNumber is undefined
 		assert columnNumber is undefined
 
-	it "handles an complex eval", ->
+	it "handles a complex eval", ->
 		stack = parseStack
 			stack: "    at eval (eval at <anonymous> (http://localhost/random/test/js/jquery-1.11.0.js:339:22), <anonymous>:3:1)"
 		assert stack.length is 1

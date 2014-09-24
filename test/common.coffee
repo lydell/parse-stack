@@ -15,9 +15,9 @@ You should have received a copy of the GNU Lesser General Public License along w
 see <http://www.gnu.org/licenses/>.
 ###
 
-assert = require "yaba" # https://github.com/lydell/yaba
-throws = require "throws" # https://github.com/lydell/throws
-equals = require "equals" # https://github.com/jkroso/equals
+assert = require "yaba"
+throws = require "throws"
+equals = require "equals"
 
 throws.messageHolder = assert
 

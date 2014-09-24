@@ -18,8 +18,6 @@ not, see <http://www.gnu.org/licenses/>.
 # - `\x20` matches a space.
 # - See also support/support.md
 formats = [
-	
-
 	# The at format.
 	///
 		^(?=
