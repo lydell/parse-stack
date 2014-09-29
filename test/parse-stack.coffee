@@ -87,10 +87,7 @@ describe "the at format", ->
 		assert columnNumber is 1
 
 
-	it "may also contain a function name, if parenthesis surround", ->
-		assert throws Error("    at functionName :0:1"),
-			-> parseStack({stack: "    at functionName :0:1"})
-
+	it "may also contain a function name", ->
 		stack = parseStack({stack: "    at functionName (:0:1)"})
 		assert stack.length is 1
 		{name, filepath, lineNumber, columnNumber} = stack[0]
@@ -110,6 +107,25 @@ describe "the at format", ->
 		assert lineNumber is 0
 		assert columnNumber is 1
 
+	it "handles an eval", ->
+		stack = parseStack
+			stack: "    at eval (native)"
+		assert stack.length is 1
+		{name, filepath, lineNumber, columnNumber} = stack[0]
+		assert name is "eval"
+		assert filepath is "native"
+		assert lineNumber is undefined
+		assert columnNumber is undefined
+
+	it "handles a complex eval", ->
+		stack = parseStack
+			stack: "    at eval (eval at <anonymous> (http://localhost/random/test/js/jquery-1.11.0.js:339:22), <anonymous>:3:1)"
+		assert stack.length is 1
+		{name, filepath, lineNumber, columnNumber} = stack[0]
+		assert name is "eval"
+		assert filepath is "eval at <anonymous> (http://localhost/random/test/js/jquery-1.11.0.js:339:22), <anonymous>"
+		assert lineNumber is 3
+		assert columnNumber is 1
 
 	it "parses a nice example", ->
 		stack = parseStack
