@@ -25,11 +25,13 @@ formats = [
 			([^(]+) # name
 			\x20\(
 		)?
-		(\S*)       # filepath
-		:
-		(\d+)       # lineNumber
-		:
-		(\d+)       # columnNumber
+		(.*?)       # filepath
+		(?:
+			:
+			(\d+)   # lineNumber
+			:
+			(\d+)   # columnNumber
+		)?
 		\)?$
 		///
 
