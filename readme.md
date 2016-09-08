@@ -1,3 +1,8 @@
+**DEPRECATED.** Use [error-stack-parser] instead.
+
+[error-stack-parser]: https://github.com/stacktracejs/error-stack-parser
+
+
 [![Build Status](https://travis-ci.org/lydell/parse-stack.png?branch=master)](https://travis-ci.org/lydell/parse-stack)
 
 Overview
