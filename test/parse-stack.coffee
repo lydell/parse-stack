@@ -127,6 +127,16 @@ describe "the at format", ->
 		assert lineNumber is 3
 		assert columnNumber is 1
 
+	it "handles a complex anonymous function syntax", ->
+		stack = parseStack
+			stack: "    at Object.o.(anonymous function) [as throwsErr] (/home/vpupkin/src/demo/index.js:51:16)"
+		assert stack.length is 1
+		{name, filepath, lineNumber, columnNumber} = stack[0]
+		assert name is "Object.o.(anonymous function) [as throwsErr]"
+		assert filepath is "/home/vpupkin/src/demo/index.js"
+		assert lineNumber is 51
+		assert columnNumber is 16
+
 	it "parses a nice example", ->
 		stack = parseStack
 			stack: """
