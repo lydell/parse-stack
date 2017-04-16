@@ -22,17 +22,29 @@ formats = [
 	///
 		^\x20+at\x20
 		(?:
-			([^(]+) # name
-			\x20\(
-		)?
-		(.*?)       # filepath
-		(?:
-			:
-			(\d+)   # lineNumber
-			:
-			(\d+)   # columnNumber
-		)?
-		\)?$
+			(?:
+				(.+?) # name
+				\x20
+				\(
+					(.*?) # filepath
+					(?:
+						:
+						(\d+) # lineNumber
+						:
+						(\d+) # columnNumber
+					)?
+				\)
+			)|(?:
+				()
+				(.*?) # filepath
+				(?:
+					:
+					(\d+) # lineNumber
+					:
+					(\d+) # columnNumber
+				)
+			?)
+		)$
 		///
 
 	# The @ format.
