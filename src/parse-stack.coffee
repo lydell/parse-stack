@@ -15,25 +15,40 @@ You should have received a copy of the GNU Lesser General Public License along w
 not, see <http://www.gnu.org/licenses/>.
 ###
 
+# - Each entry is either a single regexp or an array of regexps.
 # - `\x20` matches a space.
 # - See also support/support.md
 formats = [
-	# The at format.
-	///
-		^\x20+at\x20
-		(?:
-			([^(]+) # name
-			\x20\(
-		)?
-		(.*?)       # filepath
-		(?:
-			:
-			(\d+)   # lineNumber
-			:
-			(\d+)   # columnNumber
-		)?
-		\)?$
+	[
+		# The at format with function name.
 		///
+			^\x20+at\x20
+			(.+?) # name
+			\x20
+			\(
+				(.*?) # filepath
+				(?:
+					:
+					(\d+) # lineNumber
+					:
+					(\d+) # columnNumber
+				)?
+			\)$
+			///
+
+		# The at format without function name.
+		///
+			^\x20+at\x20
+			() # empty name, keeping the capture groups order
+			(.*?) # filepath
+			(?:
+				:
+				(\d+) # lineNumber
+				:
+				(\d+) # columnNumber
+			)?$
+			///
+	]
 
 	# The @ format.
 	///
@@ -66,7 +81,7 @@ parseStack = (error)->
 		throw new Error "Unkown stack trace format:\n#{stack}"
 
 	for stackLine, index in stackLines
-		[match, name, filepath, lineNumber, columnNumber] = stackLine.match(format) ? []
+		[match, name, filepath, lineNumber, columnNumber] = matchStackLine(format, stackLine) ? []
 		unless match
 			throw new Error "Unknown stack trace formatting on stack line #{index+1}:\n#{stackLine}"
 
@@ -76,6 +91,13 @@ parseStack = (error)->
 		lineNumber   = ensureType(Number, lineNumber)
 		columnNumber = ensureType(Number, columnNumber)
 		{name, filepath, lineNumber, columnNumber}
+
+matchStackLine = (format, line)->
+	return line.match(format) if format instanceof RegExp
+	for re in format
+		match = line.match(re)
+		break if match
+	return match
 
 ensureType = (type, value)-> if value then type(value) else undefined
 
